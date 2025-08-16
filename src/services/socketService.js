@@ -46,6 +46,9 @@ class SocketService {
       this.reconnectAttempts = 0;
 
       // Join appropriate rooms based on user role
+      console.log('🔌 User role for WebSocket:', userRole);
+      console.log('🔌 User ID for WebSocket:', userId);
+      
       if (['SUPER_ADMIN', 'ADMIN', 'MODERATOR'].includes(userRole)) {
         console.log('🔌 Joining admin room');
         this.socket.emit('join-admin', { userId, userRole });
